@@ -14,8 +14,9 @@
     <div class="container nav-container">
       <h1 class="logo">HySky <span>Digital</span></h1>
       <div style="display: flex; gap: 15px; align-items: center;">
-        <span class="badge" id="user-email">Mi Cuenta</span>
-        <a href="index.html" style="color: #94a3b8; text-decoration: none; font-size: 0.9rem;">Cerrar sesión</a>
+        <span class="badge" id="user-email-display">Mi Cuenta</span>
+        <a href="index.html" class="badge" style="background-color: #059669; text-decoration: none; color: #fff;">Ver Ofertas / Comprar</a>
+        <a href="login.html" style="color: #94a3b8; text-decoration: none; font-size: 0.9rem;" onclick="localStorage.clear();">Salir</a>
       </div>
     </div>
   </header>
@@ -24,23 +25,26 @@
   <main class="container" style="padding: 40px 20px;">
     
     <!-- Welcome Banner -->
-    <div style="background-color: #1e293b; border: 1px solid #334155; padding: 25px; border-radius: 12px; margin-bottom: 30px;">
-      <h2 style="font-size: 1.8rem; margin-bottom: 10px; color: #fff;">Bienvenido a tu Panel</h2>
-      <p style="color: #94a3b8;">Aquí puedes visualizar tus licencias activas adquiridas a través de Hotmart y el historial de tus transacciones en USD.</p>
+    <div style="background-color: #1e293b; border: 1px solid #334155; padding: 25px; border-radius: 12px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+      <div>
+        <h2 style="font-size: 1.8rem; margin-bottom: 10px; color: #fff;">Bienvenido a tu Panel</h2>
+        <p style="color: #94a3b8;">Aquí puedes visualizar tus licencias activas y adquirir nuevos planes en USD a través de Hotmart.</p>
+      </div>
+      <a href="index.html" class="btn-primary" style="display: inline-block; width: auto; padding: 10px 20px; text-decoration: none;">Adquirir Nueva Licencia</a>
     </div>
 
     <!-- Grid de Secciones -->
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;">
       
       <!-- Licencias Activas -->
       <div style="background-color: #1e293b; border: 1px solid #334155; padding: 25px; border-radius: 12px;">
         <h3 style="color: #38bdf8; margin-bottom: 15px; font-size: 1.2rem;">🔑 Mis Licencias Activas</h3>
         <div style="background: #0f172a; padding: 15px; border-radius: 8px; border-left: 4px solid #10b981; margin-bottom: 15px;">
-          <p style="font-weight: bold; color: #fff; margin-bottom: 5px;">Licencia 1 Mes (USD $10.00)</p>
-          <p style="font-size: 0.85rem; color: #34d399; margin-bottom: 5px;">Estado: Activa</p>
-          <p style="font-size: 0.75rem; color: #94a3b8;">Clave: HYSKY-A84F9X-2026</p>
+          <p style="font-weight: bold; color: #fff; margin-bottom: 5px;">Licencia de Prueba / Acceso Inicial</p>
+          <p style="font-size: 0.85rem; color: #34d399; margin-bottom: 5px;">Estado: Cuenta Registrada</p>
+          <p style="font-size: 0.75rem; color: #94a3b8;">Compra un plan en la tienda para activar tu clave.</p>
         </div>
-        <p style="font-size: 0.75rem; color: #d9534f;">⏱️ Nota: Las nuevas compras se reflejan automáticamente tras la confirmación de Hotmart (plazo máx. 24h).</p>
+        <p style="font-size: 0.75rem; color: #d9534f;">⏱️ Nota: Las licencias se procesan automáticamente tras confirmar el pago en Hotmart (plazo máx. 24h).</p>
       </div>
 
       <!-- Historial de Compras -->
@@ -49,12 +53,11 @@
         <div style="display: flex; flex-direction: column; gap: 10px;">
           <div style="background: #0f172a; padding: 12px; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem;">
             <div>
-              <p style="font-weight: 600; color: #fff;">Licencia 1 Mes</p>
-              <p style="font-size: 0.75rem; color: #94a3b8;">Ref: HP-94821039</p>
+              <p style="font-weight: 600; color: #fff;">Registro Inicial</p>
+              <p style="font-size: 0.75rem; color: #94a3b8;">Estado de cuenta</p>
             </div>
             <div style="text-align: right;">
-              <span style="color: #34d399; font-weight: bold;">USD $10.00</span>
-              <p style="font-size: 0.75rem; color: #94a3b8;">Completado</p>
+              <span style="color: #38bdf8; font-weight: bold;">Activo</span>
             </div>
           </div>
         </div>
@@ -71,5 +74,12 @@
     </div>
   </footer>
 
+  <script>
+    // Muestra el correo guardado en el login
+    const savedEmail = localStorage.getItem('hysky_user_email');
+    if (savedEmail) {
+      document.getElementById('user-email-display').textContent = savedEmail;
+    }
+  </script>
 </body>
 </html>
