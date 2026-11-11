@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar Sesión - HySky Digital</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body style="display: flex; flex-direction: column; min-height: 100vh; justify-content: space-between;">
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <h1 class="logo">HySky <span>Digital</span></h1>
+      <a href="index.html" class="badge" style="text-decoration: none;">← Volver a la Tienda</a>
+    </div>
+  </header>
+
+  <!-- Login Section -->
+  <main class="container" style="display: flex; justify-content: center; align-items: center; padding: 40px 20px; flex-grow: 1;">
+    <div style="background-color: #1e293b; border: 1px solid #334155; padding: 35px; border-radius: 12px; width: 100%; max-width: 400px; box-shadow: 0 10px 25px rgba(0,0,0,0.3);">
+      
+      <h2 style="font-size: 1.6rem; margin-bottom: 8px; color: #fff; text-align: center;">Acceso de Usuario</h2>
+      <p style="color: #94a3b8; font-size: 0.9rem; text-align: center; margin-bottom: 25px;">Ingresa a tu panel para ver tus licencias.</p>
+
+      <form action="dashboard.html" method="GET" style="display: flex; flex-direction: column; gap: 15px;">
+        <div>
+          <label style="display: block; font-size: 0.85rem; color: #cbd5e1; margin-bottom: 5px;">Correo Electrónico</label>
+          <input type="email" required placeholder="tu@correo.com" style="width: 100%; padding: 12px; background-color: #0f172a; border: 1px solid #334155; border-radius: 8px; color: #fff; font-size: 0.95rem;">
+        </div>
+
+        <div>
+          <label style="display: block; font-size: 0.85rem; color: #cbd5e1; margin-bottom: 5px;">Contraseña</label>
+          <input type="password" required placeholder="••••••••" style="width: 100%; padding: 12px; background-color: #0f172a; border: 1px solid #334155; border-radius: 8px; color: #fff; font-size: 0.95rem;">
+        </div>
+
+        <button type="submit" class="btn-primary" style="margin-top: 10px; cursor: pointer; border: none;">Entrar al Panel</button>
+      </form>
+
+      <div style="margin-top: 20px; text-align: center; font-size: 0.85rem; color: #94a3b8;">
+        ¿No tienes cuenta? Las licencias y accesos se gestionan automáticamente tras completar tu compra en Hotmart.
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 HySky Software SaaS. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
