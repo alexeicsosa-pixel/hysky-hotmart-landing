@@ -24,22 +24,22 @@
       <h2 style="font-size: 1.6rem; margin-bottom: 8px; color: #fff; text-align: center;">Acceso de Usuario</h2>
       <p style="color: #94a3b8; font-size: 0.9rem; text-align: center; margin-bottom: 25px;">Ingresa a tu panel para ver tus licencias.</p>
 
-      <form action="dashboard.html" method="GET" style="display: flex; flex-direction: column; gap: 15px;">
+      <form id="login-form" style="display: flex; flex-direction: column; gap: 15px;">
         <div>
           <label style="display: block; font-size: 0.85rem; color: #cbd5e1; margin-bottom: 5px;">Correo Electrónico</label>
-          <input type="email" required placeholder="tu@correo.com" style="width: 100%; padding: 12px; background-color: #0f172a; border: 1px solid #334155; border-radius: 8px; color: #fff; font-size: 0.95rem;">
+          <input type="email" id="email-input" required placeholder="tu@correo.com" style="width: 100%; padding: 12px; background-color: #0f172a; border: 1px solid #334155; border-radius: 8px; color: #fff; font-size: 0.95rem;">
         </div>
 
         <div>
           <label style="display: block; font-size: 0.85rem; color: #cbd5e1; margin-bottom: 5px;">Contraseña</label>
-          <input type="password" required placeholder="••••••••" style="width: 100%; padding: 12px; background-color: #0f172a; border: 1px solid #334155; border-radius: 8px; color: #fff; font-size: 0.95rem;">
+          <input type="password" id="password-input" required placeholder="••••••••" style="width: 100%; padding: 12px; background-color: #0f172a; border: 1px solid #334155; border-radius: 8px; color: #fff; font-size: 0.95rem;">
         </div>
 
         <button type="submit" class="btn-primary" style="margin-top: 10px; cursor: pointer; border: none;">Entrar al Panel</button>
       </form>
 
       <div style="margin-top: 20px; text-align: center; font-size: 0.85rem; color: #94a3b8;">
-        ¿No tienes cuenta? Las licencias y accesos se gestionan automáticamente tras completar tu compra en Hotmart.
+        ¿No tienes cuenta? Las licencias y accesos se generan automáticamente tras completar tu compra en Hotmart.
       </div>
 
     </div>
@@ -52,5 +52,14 @@
     </div>
   </footer>
 
+  <script>
+    document.getElementById('login-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = document.getElementById('email-input').value;
+      // Guardamos el correo temporalmente en el navegador para mostrarlo en el dashboard
+      localStorage.setItem('hysky_user_email', email);
+      window.location.href = 'dashboard.html';
+    });
+  </script>
 </body>
 </html>
