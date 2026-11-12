@@ -46,8 +46,8 @@
             <li>✔️ Funciones esenciales</li>
             <li>✔️ Soporte estándar</li>
           </ul>
-          <!-- Reemplaza con tu link de Hotmart para este plan -->
-          <a href="https://pay.hotmart.com/LINK_PRUEBA_1USD" class="btn-primary">Elegir Plan</a>
+          <!-- Link de Hotmart integrado para el Plan 1 -->
+          <a href="#" class="btn-primary btn-hotmart-pay" data-checkout-url="https://pay.hotmart.com/I108454232Y?off=jm2llvnw">Elegir Plan</a>
         </div>
 
         <!-- Plan 2: 1 Mes -->
@@ -60,8 +60,8 @@
             <li>✔️ Actualizaciones regulares</li>
             <li>✔️ Soporte técnico</li>
           </ul>
-          <!-- Reemplaza con tu link de Hotmart para este plan -->
-          <a href="https://pay.hotmart.com/LINK_1MES_10USD" class="btn-primary">Elegir Plan</a>
+          <!-- Link de Hotmart integrado para el Plan 2 -->
+          <a href="#" class="btn-primary btn-hotmart-pay" data-checkout-url="https://pay.hotmart.com/I108454232Y?off=dqk96rr8">Elegir Plan</a>
         </div>
 
         <!-- Plan 3: 6 Meses -->
@@ -74,8 +74,8 @@
             <li>✔️ Prioridad en soporte</li>
             <li>✔️ Todas las herramientas</li>
           </ul>
-          <!-- Reemplaza con tu link de Hotmart para este plan -->
-          <a href="https://pay.hotmart.com/LINK_6MESES_50USD" class="btn-primary">Elegir Plan</a>
+          <!-- Link de Hotmart integrado para el Plan 3 -->
+          <a href="#" class="btn-primary btn-hotmart-pay" data-checkout-url="https://pay.hotmart.com/I108454232Y?off=cmap5u3b">Elegir Plan</a>
         </div>
 
         <!-- Plan 4: 1 Año -->
@@ -88,8 +88,8 @@
             <li>✔️ Soporte prioritario 24/7</li>
             <li>✔️ Actualizaciones completas</li>
           </ul>
-          <!-- Reemplaza con tu link de Hotmart para este plan -->
-          <a href="https://pay.hotmart.com/LINK_1ANO_100USD" class="btn-primary">Elegir Plan</a>
+          <!-- Link de Hotmart integrado para el Plan 4 -->
+          <a href="#" class="btn-primary btn-hotmart-pay" data-checkout-url="https://pay.hotmart.com/I108454232Y?off=o9qvgmsj">Elegir Plan</a>
         </div>
 
         <!-- Plan 5: Premium Betas -->
@@ -103,13 +103,54 @@
             <li>⭐ Acceso vitalicio/extendido</li>
             <li>⭐ Soporte directo con desarrolladores</li>
           </ul>
-          <!-- Reemplaza con tu link de Hotmart para este plan -->
-          <a href="https://pay.hotmart.com/LINK_PREMIUM_500USD" class="btn-primary btn-gold">Elegir Premium</a>
+          <!-- Link de Hotmart integrado para el Plan 5 -->
+          <a href="#" class="btn-primary btn-gold btn-hotmart-pay" data-checkout-url="https://pay.hotmart.com/I108454232Y?off=ck0tjy95">Elegir Premium</a>
         </div>
 
       </div>
     </div>
   </section>
+
+  <!-- Elemento oculto obligatorio y cargador oficial del Widget de Hotmart -->
+  <a id="hotmart_checkout_trigger" href="#" class="hotmart-fb hotmart__button-checkout" style="display:none;"></a>
+
+  <script type="text/javascript">
+    function importHotmart(){ 
+      var imported = document.createElement('script'); 
+      imported.src = 'https://static.hotmart.com/checkout/widget.min.js'; 
+      imported.async = true;
+      document.head.appendChild(imported); 
+      var link = document.createElement('link'); 
+      link.rel = 'stylesheet'; 
+      link.type = 'text/css'; 
+      link.href = 'https://static.hotmart.com/css/hotmart-fb.min.css'; 
+      document.head.appendChild(link);
+    } 
+    importHotmart(); 
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const buttons = document.querySelectorAll('.btn-hotmart-pay');
+      const trigger = document.getElementById('hotmart_checkout_trigger');
+
+      buttons.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          let rawUrl = btn.getAttribute('data-checkout-url');
+
+          // Forzar que abra en modo modal incrustado sin salir de la página
+          let finalUrl = rawUrl;
+          if (!finalUrl.includes('checkoutMode=')) {
+            finalUrl += (finalUrl.includes('?') ? '&' : '?') + 'checkoutMode=6';
+          }
+
+          trigger.setAttribute('href', finalUrl);
+          trigger.click();
+        });
+      });
+    });
+  </script>
 
   <!-- Footer -->
   <footer class="footer">
