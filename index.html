@@ -46,8 +46,8 @@
             <li>✔️ Funciones esenciales</li>
             <li>✔️ Soporte estándar</li>
           </ul>
-          <!-- Link de Hotmart integrado para el Plan 1 -->
-          <a href="#" class="btn-primary btn-hotmart-pay" data-checkout-url="https://pay.hotmart.com/I108454232Y?off=jm2llvnw">Elegir Plan</a>
+          <!-- Link de Lemon Squeezy integrado para el Plan 1 -->
+          <a href="https://hyskydigital.lemonsqueezy.com/checkout/buy/80a66b34-b7f8-46d6-b698-a4297ef0a801?embed=1" class="btn-primary lemonsqueezy-button">Elegir Plan</a>
         </div>
 
         <!-- Plan 2: 1 Mes -->
@@ -60,8 +60,8 @@
             <li>✔️ Actualizaciones regulares</li>
             <li>✔️ Soporte técnico</li>
           </ul>
-          <!-- Link de Hotmart integrado para el Plan 2 -->
-          <a href="#" class="btn-primary btn-hotmart-pay" data-checkout-url="https://pay.hotmart.com/I108454232Y?off=dqk96rr8">Elegir Plan</a>
+          <!-- Link de Lemon Squeezy integrado para el Plan 2 -->
+          <a href="https://hyskydigital.lemonsqueezy.com/checkout/buy/17183874-e5ce-4e86-a0b2-db1256c02318?embed=1" class="btn-primary lemonsqueezy-button">Elegir Plan</a>
         </div>
 
         <!-- Plan 3: 6 Meses -->
@@ -74,8 +74,8 @@
             <li>✔️ Prioridad en soporte</li>
             <li>✔️ Todas las herramientas</li>
           </ul>
-          <!-- Link de Hotmart integrado para el Plan 3 -->
-          <a href="#" class="btn-primary btn-hotmart-pay" data-checkout-url="https://pay.hotmart.com/I108454232Y?off=cmap5u3b">Elegir Plan</a>
+          <!-- Link de Lemon Squeezy integrado para el Plan 3 -->
+          <a href="https://hyskydigital.lemonsqueezy.com/checkout/buy/b63fbec1-1be0-472d-b571-38b14a5ca157?embed=1" class="btn-primary lemonsqueezy-button">Elegir Plan</a>
         </div>
 
         <!-- Plan 4: 1 Año -->
@@ -88,8 +88,8 @@
             <li>✔️ Soporte prioritario 24/7</li>
             <li>✔️ Actualizaciones completas</li>
           </ul>
-          <!-- Link de Hotmart integrado para el Plan 4 -->
-          <a href="#" class="btn-primary btn-hotmart-pay" data-checkout-url="https://pay.hotmart.com/I108454232Y?off=o9qvgmsj">Elegir Plan</a>
+          <!-- Link de Lemon Squeezy integrado para el Plan 4 -->
+          <a href="https://hyskydigital.lemonsqueezy.com/checkout/buy/556d9453-2a9e-440a-a128-2b8801ddc994?embed=1" class="btn-primary lemonsqueezy-button">Elegir Plan</a>
         </div>
 
         <!-- Plan 5: Premium Betas -->
@@ -103,54 +103,16 @@
             <li>⭐ Acceso vitalicio/extendido</li>
             <li>⭐ Soporte directo con desarrolladores</li>
           </ul>
-          <!-- Link de Hotmart integrado para el Plan 5 -->
-          <a href="#" class="btn-primary btn-gold btn-hotmart-pay" data-checkout-url="https://pay.hotmart.com/I108454232Y?off=ck0tjy95">Elegir Premium</a>
+          <!-- Link de Lemon Squeezy integrado para el Plan 5 -->
+          <a href="https://hyskydigital.lemonsqueezy.com/checkout/buy/b1424f61-3ad3-4bd5-bba3-9af81833cf13?embed=1" class="btn-primary btn-gold lemonsqueezy-button">Elegir Premium</a>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- Elemento oculto obligatorio y cargador oficial del Widget de Hotmart -->
-  <a id="hotmart_checkout_trigger" href="#" class="hotmart-fb hotmart__button-checkout" style="display:none;"></a>
-
-  <script type="text/javascript">
-    function importHotmart(){ 
-      var imported = document.createElement('script'); 
-      imported.src = 'https://static.hotmart.com/checkout/widget.min.js'; 
-      imported.async = true;
-      document.head.appendChild(imported); 
-      var link = document.createElement('link'); 
-      link.rel = 'stylesheet'; 
-      link.type = 'text/css'; 
-      link.href = 'https://static.hotmart.com/css/hotmart-fb.min.css'; 
-      document.head.appendChild(link);
-    } 
-    importHotmart(); 
-  </script>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const buttons = document.querySelectorAll('.btn-hotmart-pay');
-      const trigger = document.getElementById('hotmart_checkout_trigger');
-
-      buttons.forEach((btn) => {
-        btn.addEventListener('click', (e) => {
-          e.preventDefault();
-          let rawUrl = btn.getAttribute('data-checkout-url');
-
-          // Forzar que abra en modo modal incrustado sin salir de la página
-          let finalUrl = rawUrl;
-          if (!finalUrl.includes('checkoutMode=')) {
-            finalUrl += (finalUrl.includes('?') ? '&' : '?') + 'checkoutMode=6';
-          }
-
-          trigger.setAttribute('href', finalUrl);
-          trigger.click();
-        });
-      });
-    });
-  </script>
+  <!-- Script oficial de Lemon Squeezy para activar los modales automáticamente -->
+  <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
 
   <!-- Footer -->
   <footer class="footer">
@@ -160,7 +122,7 @@
         <a href="privacy.html" style="color: #94a3b8; text-decoration: none; font-size: 0.85rem;">Términos y Privacidad</a>
       </div>
       <p>&copy; 2026 HySky Software SaaS. Todos los derechos reservados.</p>
-      <p class="disclaimer">Pago seguro procesado por Hotmart (Merchant of Record). Entrega en un plazo máximo de 24 horas.</p>
+      <p class="disclaimer">Pago seguro procesado por Lemon Squeezy (Merchant of Record). Entrega en un plazo máximo de 24 horas.</p>
     </div>
   </footer>
 
